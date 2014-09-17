@@ -1,0 +1,96 @@
+#preload-01 { background: url(VEERETA.png) no-repeat -9999px -9999px; }
+#preload-02 { background: url(VEERETAD.png) no-repeat -9999px -9999px; }
+#preload-03 { background: url(PDICE1.png) no-repeat -9999px -9999px; }
+#preload-04 { background: url(PDICE2.png) no-repeat -9999px -9999px; }
+#preload-05 { background: url(PDICE3.png) no-repeat -9999px -9999px; }
+#preload-06 { background: url(PDICE4.png) no-repeat -9999px -9999px; }
+#preload-07 { background: url(PDICE5.png) no-repeat -9999px -9999px; }
+#preload-08 { background: url(PDICE6.png) no-repeat -9999px -9999px; }
+#preload-09 { background: url(SKIP.png) no-repeat -9999px -9999px; }
+#preload-10 { background: url(SKIPP.png) no-repeat -9999px -9999px; }
+#preload-11 { background: url(SKIPD.png) no-repeat -9999px -9999px; }
+
+body
+{
+background: #feccb1; /* Old browsers */
+background: -moz-linear-gradient(top,  #feccb1 0%, #f17432 50%, #ea5507 51%, #fb955e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feccb1), color-stop(50%,#f17432), color-stop(51%,#ea5507), color-stop(100%,#fb955e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+}
+
+.pigface{
+    background:url('PIG_FACE.png') no-repeat;
+    position:relative;
+}
+.cent{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.righteye{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 120;
+    right: 0;
+    top: 80;
+}
+.lefteye{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 120;
+    top: 80;   
+}
+#btveereta{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 240;
+    right: 220;
+}
+#btskip{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 240;
+    left: 220;
+}
+.consolebar{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    top: 6px;
+    width: 297px;
+    height: 20px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    border-style: ridge;
+    border-color: black;
+}
+.console{
+    position: relative;
+    background-color: black;
+    text-align: left;
+    height: 200px;
+    width: 300px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    color: green;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    word-wrap: break-word;
+    top: 5px;
+    bottom: 10px;
+}
+.scrollable {
+    overflow: scroll;
+    
+}

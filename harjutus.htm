@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Kajar's game of PIG - 131034 IAPB33</title>
+        <script>
+            // Javascript
+            
+
+            function gid(i){
+                return document.getElementById(i);
+            }
+            
+            function katse(c){
+                gid("Kajar1").style.color=c;
+            }
+            function lisa(c){
+                alert("added tekst \"" + c + "\"")
+                gid("Kajar1").innerHTML+=c;
+            }
+                
+        </script>
+	</head>
+    <body>
+        <script>
+            katse();
+        </script>
+        <div id="Kajar1">
+            Muudetav rida
+        </div>
+        <br><br>
+        <button type="button" onclick="katse('red');">punaseks</button>
+        <button type="button" onclick="katse('green');">roheliseks</button>
+        <button type="button" onclick="katse('blue');">siniseks</button>
+        <br><br><br>
+        <div onmouseover="katse('black');">Kui hiir üle teksti, siis mustaks!</div>
+        <br><br>
+        <button type="button" onclick="lisa(' lisatud tekst');">lisa teksti</button>
+    </body>
+</html> 
