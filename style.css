@@ -51,17 +51,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 240;
-    right: 220;
+    top: 260;
+    right: 190;
 }
 #btskip{
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 240;
-    left: 220;
+    top: 260;
+    left: 190;
 }
-.consolebar{
+#btreset{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 300;
+    left: 95;
+}
+.loggerbar{
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -75,7 +82,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
     border-style: ridge;
     border-color: black;
 }
-.console{
+.logger{
     position: relative;
     background-color: black;
     text-align: left;

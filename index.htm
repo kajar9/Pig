@@ -9,12 +9,7 @@
 		<!--[if IEMobile]>
         <link rel="stylesheet" type="text/css" href="mobile.css" media="screen" />
         <![endif]-->
-		<title>Kajar's game of PIG - 131034 IAPB33</title>
-
-        <script>
-        reset();
-        </script>
-        
+		<title>Kajar's Game of PIG! - 131034 IAPB33</title>      
         
 	</head>
     <body>
@@ -24,23 +19,28 @@
             <a class="righteye" id="taring2"><img src="PDICE1.png"></a>
             
             <button class="button" id="btveereta" type="submit" style="border: 0; background: transparent" onclick="veereta_1()">
-                <img src="VEERETA.png" width="75" heght="75" alt="submit" />
+                <img src="VEERETA.png" alt="submit" />
             </button>
             <button class="button" id="btskip" type="submit" style="border: 0; background: transparent" onclick="skip()">
-                <img src="SKIP.png" width="75" heght="75" alt="submit" />
+                <img src="SKIP.png" alt="submit" />
+            </button>
+            <button class="button" id="btreset" type="submit" style="border: 0; background: transparent" onclick="reset()">
+                <img src="RESET.png" alt="submit" />
             </button>
             
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            Player Score: 12
-            Computer score: 24
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a id="player">Current : Player1</a><br><br>
+            <a id="tempscore">Tempscore : 0</a><br>
+            <a id="playerscore">Player Score: 0</a><br>
+            <a id="aiscore">Computer score: 0</a><br>
 
-            <button id="btreset" type="button" onclick="reset()">Alusta uuesti</button>
+            
             
             
         
         </div>
-        <div class="consolebar">Game Output</div>
-        <div id="console" class="cent console">
+        <div class="loggerbar">Game Output</div>
+        <div id="logger" class="cent logger">
         </div>
         <div class="cent"><br>Created by Kajar Murumaa - 131034 IAPB33 (2014)</div>
         
