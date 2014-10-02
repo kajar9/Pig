@@ -22,6 +22,59 @@ background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb95
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
 }
 
+
+#tempscore{
+    font-family: 'Squada One', cursive;
+    font-size: 32px;
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 365;
+    color:#CC3300;
+}
+
+#playerscore{
+    font-family: 'Squada One', cursive;
+    font-size: 42px;
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 233;
+    top: 392;
+    color:#CC3300;
+}
+
+#aiscore{
+    font-family: 'Squada One', cursive;
+    font-size: 42px;
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 227;
+    right: 0;
+    top: 392;
+    color:#CC3300;
+}
+
+#status{
+    font-family: 'Squada One', cursive;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 405;
+    color:#CC0099;
+}
+
 .pigface{
     background:url('PIG_FACE.png') no-repeat;
     position:relative;
@@ -96,6 +149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', end
     word-wrap: break-word;
     top: 5px;
     bottom: 10px;
+    max-height: 200px;
 }
 .scrollable {
     overflow: scroll;
