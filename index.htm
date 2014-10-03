@@ -3,6 +3,7 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link rel="stylesheet" type="text/css" href="hover.css" />
 		<link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Glegoo:700' rel='stylesheet' type='text/css'>
         <script type="text/javascript" charset="utf-8" src="script.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
@@ -14,37 +15,35 @@
         
 	</head>
     <body>
-        <div class="cent pigface" style="width: 300px; height: 460px">
+        <div id="pigface" class="cent pigface">
             Kajar's Game of PIG!
-            <a class="lefteye" id="taring1"><img src="PDICE1.png"></a>
-            <a class="righteye" id="taring2"><img src="PDICE1.png"></a>
+            <div id="taring1" class="cent lefteye"></div>
+			<div id="taring2" class="cent righteye"></div>
             
-            <button class="button" id="btveereta" type="submit" style="border: 0; background: transparent" onclick="veereta_1()">
-                <img src="VEERETA.png"/>
-            </button>
-            <button class="button" id="btskip" type="submit" style="border: 0; background: transparent" onclick="skip()">
-                <img src="SKIP.png"/>
-            </button>
-            <button class="button" id="btreset" type="submit" style="border: 0; background: transparent" onclick="reset()">
-                <img src="RESET.png"/>
-            </button>
+            
+            
+            <button id="btveereta" class="cent button" type="submit" onclick="veereta_1()"></button>
+            <button id="btskip" class="cent button" type="submit" onclick="skip()"></button>
+            <button id="btreset" class="cent button" type="submit" onclick="reset()"></button>
+            
             <a id="tempscore">0</a>
             <a id="playerscore">0</a>
             <a id="aiscore">0</a><br>
             
             
             <a id="status">-</a><br>
-            
 
-            
-            
-            
-        
         </div>
         <div class="loggerbar">Game Output</div>
         <div id="logger" class="cent logger">
-        </div>
-        <div class="cent"><br>Created by Kajar Murumaa - 131034 IAPB33 (2014)</div>
+        </div><br>
+		<div id="stratcontroldiv" style="width: 300px" class="cent">
+<input class="double" type="checkbox" id="checkstrat" value="0">&nbsp;&nbsp;&nbsp;X: 
+<input class="tb10" type="number" id="stratx" min=0 max=100 value="20">
+<button type="button" onclick="stratcntrl();">Submit</button>
+<br><a id="msgstrat">Strategy control disabled<br>Using built-in strategy list</a>
+</div>
+        <div class="cent"><br>Kajar Murumaa - 131034 IAPB33 (2014)</div>
         
     </body>
 </html> 

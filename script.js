@@ -15,10 +15,11 @@ function reset() {
     h = 2;
     rollcount = 2;
     timesrolled = 0;
-    gid("tempscore").innerHTML = z;
+    manualstrat=false;
+	gid("tempscore").innerHTML = z;
     status("Players turn");
-    gid("taring1").innerHTML = "<img src=\"PDICE1.png\">";
-    gid("taring2").innerHTML = "<img src=\"PDICE1.png\">";
+    gid("taring1").style.background = "url('IMAGESET.png') -300px -0px";
+    gid("taring2").style.background = "url('IMAGESET.png') -300px -0px";
     gid("playerscore").innerHTML = playerscore;
     gid("aiscore").innerHTML = aiscore;
     clrlogger();
@@ -26,7 +27,7 @@ function reset() {
     logger("Player starts...");
     enablebuttons();
     gid("btreset").disabled = true;
-    gid("btreset").innerHTML = "<img src=\"RESETD.png\" width=\"75\" heght=\"75\"/>";
+    gid("btreset").style.background = "url('IMAGESET.png') -86px -460px";
 }
 
 // Lihtsustav funktsioon "document.getElementById" väljakutse lühendamiseks
@@ -63,8 +64,8 @@ function status(status){
 function veereta() {
         x = Math.floor((Math.random() * 6) + 1);
         y = Math.floor((Math.random() * 6) + 1);
-        gid("taring1").innerHTML = "<img src=\"PDICE" + x + ".png\">";
-        gid("taring2").innerHTML = "<img src=\"PDICE" + y + ".png\">";
+		gid("taring1").style.background = "url('IMAGESET.png') -300px "+((x-1)*(-75))+"px";
+        gid("taring2").style.background = "url('IMAGESET.png') -300px "+((y-1)*(-75))+"px";
         i += 25
         if (i < 350) {
             setTimeout(veereta, i)
@@ -119,20 +120,20 @@ function veereta() {
 function disablebuttons() {
 
     gid("btveereta").disabled = true;
-    gid("btveereta").innerHTML = "<img src=\"VEERETAD.png\" width=\"75\" heght=\"75\"/>";
-    gid("btreset").disabled = true;
-    gid("btreset").innerHTML = "<img src=\"RESETD.png\" width=\"75\" heght=\"75\"/>";
+    gid("btveereta").style.background = "url('IMAGESET.png') -225px -492px";
     gid("btskip").disabled = true;
-    gid("btskip").innerHTML = "<img src=\"SKIPD.png\" width=\"75\" heght=\"75\"/>";
+    gid("btskip").style.background = "url('IMAGESET.png') -75px -492px";
+    gid("btreset").disabled = true;
+    gid("btreset").style.background = "url('IMAGESET.png') -86px -460px";
 }
 
 function enablebuttons() {
     gid("btveereta").disabled = false;
-    gid("btveereta").innerHTML = "<img src=\"VEERETA.png\" width=\"75\" heght=\"75\"/>";
-    gid("btreset").disabled = false;
-    gid("btreset").innerHTML = "<img src=\"RESET.png\" width=\"75\" heght=\"75\"/>";
+    gid("btveereta").style.background = "url('IMAGESET.png') -150px -492px";
     gid("btskip").disabled = false;
-    gid("btskip").innerHTML = "<img src=\"SKIP.png\" width=\"75\" heght=\"75\"/>";
+    gid("btskip").style.background = "url('IMAGESET.png') 0px -492px";
+    gid("btreset").disabled = false;
+    gid("btreset").style.background = "url('IMAGESET.png') 0px -460px";
 }
 
 function skip() {
@@ -153,7 +154,7 @@ function turnchange() {
         logger("Tempscore of " + z + " added to Computer");
         logger("Computer score = " + aiscore);
         logger("");
-        logger("----------------------------------- <");
+        logger("-------------------------------- <");
         if (checkwin()) return true;
         logger("Turn goes to Player");
         enablebuttons();
@@ -164,7 +165,7 @@ function turnchange() {
         logger("Tempscore of " + z + " added to Player");
         logger("Player score = " + playerscore);
         logger("");
-        logger("----------------------------------- <");
+        logger("-------------------------------- <");
         if (checkwin()) return true;
         logger("Turn goes to Computer");
         disablebuttons();
@@ -180,8 +181,32 @@ function clrlogger() {
     gid("logger").innerHTML = ">";
 }
 
+function stratcntrl(){
+	if(gid("checkstrat").checked){
+		if(gid("stratx").value<0 || gid("stratx").value>100 || gid("stratx").value==""){
+			manualstrat=false;
+			gid("msgstrat").innerHTML="Strategy control disabled<br>Invalid input ( 0 - 100 )<br>Using built-in strategy list";
+			return false;
+		}
+		manualstrat=true;
+		gid("msgstrat").innerHTML="Strategy Control Enabled<br>Rolling until "+gid("stratx").value;
+	}
+	else{
+		gid("msgstrat").innerHTML="Strategy control disabled<br>Using built-in strategy list";
+		manualstrat=false;
+	}
+}
+
 function stratselect() {
-    // s = number of strategies
+    if(manualstrat){
+		rval=gid("stratx").value;
+		h=2
+		console.log("Manual control strategy #2");
+		console.log("Roll until " + rval + " or more");
+		setTimeout(strat, 500);
+		return 0;
+	}
+	// s = number of strategies
     s = 3;
     timesrolled = 0;
     rollcount = 1 + Math.floor((Math.random() * 5) + 1);
@@ -236,23 +261,23 @@ function strat() {
 function checkwin() {
     if (playerscore > 100) {
         status("Player WINS!");
-        logger("----------------------------------- <");
-        logger(">>>>>>>>>>>>Player won!<<<<<<<<<<<< <");
-        logger("----------------------------------- <");
-        logger("----------------------------------- <");
+        logger("-------------------------------- <");
+        logger(">>>>>>>>>>>>Player won!<<<<<<<<< <");
+        logger("-------------------------------- <");
+        logger("-------------------------------- <");
         disablebuttons();
         gid("btreset").disabled = false;
-        gid("btreset").innerHTML = "<img src=\"RESET.png\" width=\"75\" heght=\"75\"/>";
+        gid("btreset").style.background = "url('IMAGESET.png') 0px -460px";
         return true;
     } else if (aiscore > 100) {
         status("Computer WINS!");
-        logger("----------------------------------- <");
-        logger(">>>>>>>>>>>Computer won!<<<<<<<<<<< <");
-        logger("----------------------------------- <");
-        logger("----------------------------------- <");
+        logger("-------------------------------- <");
+        logger(">>>>>>>>>>>Computer won!<<<<<<<< <");
+        logger("-------------------------------- <");
+        logger("-------------------------------- <");
         disablebuttons();
         gid("btreset").disabled = false;
-        gid("btreset").innerHTML = "<img src=\"RESET.png\" width=\"75\" heght=\"75\"/>";
+        gid("btreset").style.background = "url('IMAGESET.png') 0px -460px";
         return true;
     }
     return false;
