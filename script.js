@@ -107,6 +107,7 @@ function veereta() {
 
             if (turn) {
                 // Kui veeretuse lõpus on jätkuvalt kasutaja käik, lülitan nupud sisse
+				if (checkwin()) return true;
                 enablebuttons();
                 status("Players turn");
             } else {
@@ -153,9 +154,9 @@ function turnchange() {
         gid("aiscore").innerHTML = aiscore;
         logger("Tempscore of " + z + " added to Computer");
         logger("Computer score = " + aiscore);
+		if (checkwin()) return true;
         logger("");
         logger("-------------------------------- <");
-        if (checkwin()) return true;
         logger("Turn goes to Player");
         enablebuttons();
     } else {
@@ -164,9 +165,9 @@ function turnchange() {
         gid("playerscore").innerHTML = playerscore;
         logger("Tempscore of " + z + " added to Player");
         logger("Player score = " + playerscore);
+		if (checkwin()) return true;
         logger("");
         logger("-------------------------------- <");
-        if (checkwin()) return true;
         logger("Turn goes to Computer");
         disablebuttons();
         // Kuna algab uus AI käik, siis valin uue strateegia
@@ -261,6 +262,8 @@ function strat() {
 function checkwin() {
     if (playerscore > 100) {
         status("Player WINS!");
+		logger("");
+        logger("-------------------------------- <");
         logger("-------------------------------- <");
         logger(">>>>>>>>>>>>Player won!<<<<<<<<< <");
         logger("-------------------------------- <");
@@ -271,6 +274,8 @@ function checkwin() {
         return true;
     } else if (aiscore > 100) {
         status("Computer WINS!");
+		logger("");
+        logger("-------------------------------- <");
         logger("-------------------------------- <");
         logger(">>>>>>>>>>>Computer won!<<<<<<<< <");
         logger("-------------------------------- <");
