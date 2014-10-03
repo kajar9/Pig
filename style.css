@@ -131,7 +131,7 @@ font-size: 20px;
 #btveereta{
     width: 75px;
     height: 75px;
-    background:url('IMAGESET.png') -150px -492px;
+    background:url('IMAGESET.png') -225px -492px;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
@@ -143,7 +143,7 @@ font-size: 20px;
 #btskip{
     width: 75px;
     height: 75px;
-    background:url('IMAGESET.png') 0px -492px;
+    background:url('IMAGESET.png') -75px -492px;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
@@ -155,7 +155,7 @@ font-size: 20px;
 #btreset{
     width: 86px;
     height: 32px;
-    background:url('IMAGESET.png') 0px -460px;
+    background:url('IMAGESET.png') -86px -460px;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
